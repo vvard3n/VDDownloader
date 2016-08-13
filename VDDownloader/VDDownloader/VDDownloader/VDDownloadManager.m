@@ -10,36 +10,42 @@
 #import "VDDownloader.h"
 
 @interface VDDownloadManager ()
-@property (nonatomic, strong) NSMutableArray *downloadTasks;
 @end
 
 @implementation VDDownloadManager
 //下载列表
-- (NSMutableArray *)downloadTasks {
+- (NSMutableDictionary *)downloadTasks {
     if (!_downloadTasks) {
-        _downloadTasks = [NSMutableArray array];
+        _downloadTasks = [NSMutableDictionary dictionary];
     }
     return _downloadTasks;
 }
 
-- (void)downloadTaskWithUrlstr:(NSString *)urlStr success:(void(^)())successBlock progress:(void(^)(float progress))progressBlock error:(void(^)(NSError *error))errorBlock {
-    VDDownloader *downloadTask = [VDDownloader downloadTaskWithUrlstr:urlStr success:^{
+- (NSMutableArray *)tasksArr {
+    if (!_tasksArr) {
+        _tasksArr = [NSMutableArray array];
+    }
+    return _tasksArr;
+}
+
+- (void)downloadTaskWithUrlstr:(NSString *)urlStr savePath:(NSString *)path success:(void(^)())successBlock progress:(void(^)(float progress))progressBlock error:(void(^)(NSError *error))errorBlock {
+    VDDownloader *downloadTask = [VDDownloader downloadTaskWithUrlstr:urlStr savePath:path success:^{
         if(successBlock) {
-//            [self.downloadTasks removeObject:downloadTask];
             successBlock();
         }
+    
     } progress:^(float progress) {
         if(progressBlock) {
             progressBlock(progress);
         }
     } error:^(NSError *error) {
         if(errorBlock) {
-//            [self.downloadTasks removeObject:downloadTask];
             errorBlock(error);
         }
     }];
-    [self.downloadTasks addObject:downloadTask];
-    NSLog(@"任务开始，添加到队列");
+    [self.tasksArr addObject:downloadTask];
+    downloadTask.taskTag = self.tasksArr.count;
+//    [self.downloadTasks setObject:downloadTask forKey:urlStr];NSLog(@"任务开始，添加到队列");
 }
 
 #pragma mark sharedDownloader

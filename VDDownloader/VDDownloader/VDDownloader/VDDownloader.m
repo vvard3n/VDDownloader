@@ -21,9 +21,11 @@
 
 @implementation VDDownloader
 
-+ (instancetype)downloadTaskWithUrlstr:(NSString *)urlStr success:(void(^)())successBlock progress:(void(^)(float progress))progressBlock error:(void(^)(NSError *error))errorBlock {
++ (instancetype)downloadTaskWithUrlstr:(NSString *)urlStr savePath:(NSString *)path success:(void(^)())successBlock progress:(void(^)(float progress))progressBlock error:(void(^)(NSError *error))errorBlock {
     VDDownloader *downloadTask = [[VDDownloader alloc] init];
+    downloadTask.downloadPath = path;
     [downloadTask downloadFileWithUrlstr:urlStr];
+    downloadTask.taskTitle = urlStr;
     downloadTask.successBlock = successBlock;
     downloadTask.progressBlock = progressBlock;
     downloadTask.errorBlock = errorBlock;
@@ -94,11 +96,6 @@ typedef NS_ENUM(NSInteger, VDDownloadStatus) {
         self.connection = [NSURLConnection connectionWithRequest:mutableRequest delegate:self];
         [[NSRunLoop currentRunLoop]run];
     }];
-    /*
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:[[NSOperationQueue alloc] init]];
-    [[session downloadTaskWithRequest:mutableRequest] resume];
-     */
 }
 
 //从服务器获取文件大小
@@ -122,6 +119,7 @@ typedef NS_ENUM(NSInteger, VDDownloadStatus) {
     float progress = (float)self.currentTotalLength / self.expectedContentLength;
 //    NSLog(@"Get Data --- %lu byte\t--- %.2f%%", data.length, progress * 100);
     [self.stream write:data.bytes maxLength:data.length];
+    self.progress = progress;
     self.progressBlock(progress);
 }
 

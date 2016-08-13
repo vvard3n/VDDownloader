@@ -10,8 +10,11 @@
 
 @interface VDDownloadManager : NSObject
 
+@property (nonatomic, strong) NSMutableDictionary *downloadTasks;
+@property (nonatomic, strong) NSMutableArray *tasksArr;
+
 + (instancetype)manager;
 
-- (void)downloadTaskWithUrlstr:(NSString *)urlStr success:(void(^)())successBlock progress:(void(^)(float progress))progressBlock error:(void(^)(NSError *error))errorBlock;
+- (void)downloadTaskWithUrlstr:(NSString *)urlStr savePath:(NSString *)path success:(void(^)())successBlock progress:(void(^)(float progress))progressBlock error:(void(^)(NSError *error))errorBlock;
 
 @end

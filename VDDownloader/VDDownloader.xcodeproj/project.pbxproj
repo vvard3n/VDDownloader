@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7665165B1D5F67C30033A92E /* VDTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7665165A1D5F67C30033A92E /* VDTableViewCell.m */; };
+		7665165E1D5F69060033A92E /* VDCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7665165D1D5F69060033A92E /* VDCellModel.m */; };
+		766516611D5F78DE0033A92E /* VDTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 766516601D5F78DE0033A92E /* VDTaskModel.m */; };
 		76A0F1151D5F51C2006C9EFD /* VDDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A0F1141D5F51C2006C9EFD /* VDDownloadManager.m */; };
 		76C50EC41D5B3FE900A02C94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C50EC31D5B3FE900A02C94 /* main.m */; };
 		76C50EC71D5B3FE900A02C94 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C50EC61D5B3FE900A02C94 /* AppDelegate.m */; };
@@ -17,6 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		766516591D5F67C30033A92E /* VDTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDTableViewCell.h; sourceTree = "<group>"; };
+		7665165A1D5F67C30033A92E /* VDTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDTableViewCell.m; sourceTree = "<group>"; };
+		7665165C1D5F69060033A92E /* VDCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDCellModel.h; sourceTree = "<group>"; };
+		7665165D1D5F69060033A92E /* VDCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDCellModel.m; sourceTree = "<group>"; };
+		7665165F1D5F78DE0033A92E /* VDTaskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDTaskModel.h; sourceTree = "<group>"; };
+		766516601D5F78DE0033A92E /* VDTaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDTaskModel.m; sourceTree = "<group>"; };
 		76A0F1131D5F51C2006C9EFD /* VDDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDDownloadManager.h; sourceTree = "<group>"; };
 		76A0F1141D5F51C2006C9EFD /* VDDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDDownloadManager.m; sourceTree = "<group>"; };
 		76C50EBF1D5B3FE900A02C94 /* VDDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VDDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +80,10 @@
 				76C50ED01D5B3FE900A02C94 /* LaunchScreen.storyboard */,
 				76C50ED31D5B3FE900A02C94 /* Info.plist */,
 				76C50EC21D5B3FE900A02C94 /* Supporting Files */,
+				766516591D5F67C30033A92E /* VDTableViewCell.h */,
+				7665165A1D5F67C30033A92E /* VDTableViewCell.m */,
+				7665165C1D5F69060033A92E /* VDCellModel.h */,
+				7665165D1D5F69060033A92E /* VDCellModel.m */,
 			);
 			path = VDDownloader;
 			sourceTree = "<group>";
@@ -90,6 +103,8 @@
 				76A0F1141D5F51C2006C9EFD /* VDDownloadManager.m */,
 				76C50EDC1D5B405600A02C94 /* VDDownloader.h */,
 				76C50EDD1D5B405600A02C94 /* VDDownloader.m */,
+				7665165F1D5F78DE0033A92E /* VDTaskModel.h */,
+				766516601D5F78DE0033A92E /* VDTaskModel.m */,
 			);
 			path = VDDownloader;
 			sourceTree = "<group>";
@@ -163,9 +178,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				766516611D5F78DE0033A92E /* VDTaskModel.m in Sources */,
 				76C50ECA1D5B3FE900A02C94 /* ViewController.m in Sources */,
 				76C50EC71D5B3FE900A02C94 /* AppDelegate.m in Sources */,
+				7665165E1D5F69060033A92E /* VDCellModel.m in Sources */,
 				76A0F1151D5F51C2006C9EFD /* VDDownloadManager.m in Sources */,
+				7665165B1D5F67C30033A92E /* VDTableViewCell.m in Sources */,
 				76C50EDE1D5B405600A02C94 /* VDDownloader.m in Sources */,
 				76C50EC41D5B3FE900A02C94 /* main.m in Sources */,
 			);

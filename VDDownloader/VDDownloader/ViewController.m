@@ -22,12 +22,12 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [[VDDownloadManager manager] downloadTaskWithUrlstr:@"http://192.168.28.89/sogou.zip" success:^{
+    [[VDDownloadManager manager] downloadTaskWithUrlstr:@"http://dlsw.baidu.com/sw-search-sp/soft/e0/25792/Adobe.CS6.Photoshop_13_LS3.1395977557.dmg" success:^{
         NSLog(@"Done");
     } progress:^(float progress) {
         NSLog(@"%f",progress);
     } error:^(NSError *error) {
-        NSLog(@"Error:%@",error);
+        NSLog(@"TMD Error:%@",error);
     }];
 }
 

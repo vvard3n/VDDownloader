@@ -27,7 +27,7 @@
     } progress:^(float progress) {
         NSLog(@"%f",progress);
     } error:^(NSError *error) {
-        NSLog(@"TMD Error:%@",error);
+        NSLog(@"Error:%@",error);
     }];
 }
 
